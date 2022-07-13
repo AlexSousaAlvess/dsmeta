@@ -26,6 +26,26 @@ a:visited {
   margin: 0 auto;
 }
 
+.nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-button{
+  margin: 10px;
+  background-color: #283142;
+  width: 100px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.nav-button:hover{
+  background-color:#C7606B;
+}
+
 #sales {
   padding: 40px 10px;
 }

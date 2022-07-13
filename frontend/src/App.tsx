@@ -1,19 +1,18 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import NotificationButton from "./components/NotificationButton";
 import SalesCard from "./components/SalesCard";
+import About from "./pages/About";
+import Dashboard from "./pages/Dashboard";
 
 function App(){
   return(
     <>
-      <Header/>
-      <main>
-        <section id="sales">
-          <div className="dsmeta-container">
-            <SalesCard/>
-          </div>
-        </section>
-      </main>
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/sobre" element={<About/>}/>
+      </Routes>
     </>
   )
 }
