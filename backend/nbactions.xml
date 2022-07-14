@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <preAction>build-with-dependencies</preAction>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>rebuild</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>build</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>clean</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+            </goals>
+            <properties>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>test</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>test</goal>
+            </goals>
+            <properties>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>test.single</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>process-test-classes</goal>
+                <goal>surefire:test</goal>
+            </goals>
+            <properties>
+                <test>${packageClassName}</test>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>debug.test.single</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>process-test-classes</goal>
+                <goal>surefire:test</goal>
+            </goals>
+            <properties>
+                <test>${packageClassName}</test>
+                <forkMode>once</forkMode>
+                <maven.surefire.debug>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</maven.surefire.debug>
+                <jpda.listen>true</jpda.listen>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>debug.integration-test.single</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>pre-integration-test</goal>
+                <goal>failsafe:integration-test</goal>
+            </goals>
+            <properties>
+                <test>DummyToSkipUnitTests</test>
+                <failIfNoTests>false</failIfNoTests>
+                <it.test>${packageClassName}</it.test>
+                <forkMode>once</forkMode>
+                <maven.failsafe.debug>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</maven.failsafe.debug>
+                <jpda.listen>true</jpda.listen>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>debug.single.main</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>process-test-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.classpathScope>${classPathScope}</exec.classpathScope>
+                <jpda.listen>true</jpda.listen>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>run.single.main</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.classpathScope>${classPathScope}</exec.classpathScope>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>build-with-dependencies</actionName>
+            <reactor>also-make</reactor>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>integration-test.single</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>pre-integration-test</goal>
+                <goal>failsafe:integration-test</goal>
+            </goals>
+            <properties>
+                <test>DummyToSkipUnitTests</test>
+                <failIfNoTests>false</failIfNoTests>
+                <it.test>${packageClassName}</it.test>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>profile.single.main</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs></exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.mainClass>${packageClassName}</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <exec.classpathScope>${classPathScope}</exec.classpathScope>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>javadoc</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>generate-sources</goal>
+                <goal>javadoc:javadoc</goal>
+            </goals>
+            <properties>
+                <Env.TWILIO_SID>AC6e8d91ba49aed312355a6e7219cf1c8a</Env.TWILIO_SID>
+                <Env.TWILIO_KEY>be74ba45d4f1674d2a4dec227256f2e6</Env.TWILIO_KEY>
+                <Env.TWILIO_PHONE_FROM>+17197487501</Env.TWILIO_PHONE_FROM>
+                <Env.TWILIO_PHONE_TO>+5585999737386</Env.TWILIO_PHONE_TO>
+                
+                
+                
+                
+            </properties>
+        </action>
+    </actions>
